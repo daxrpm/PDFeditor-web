@@ -11,7 +11,7 @@ const Navbar = () => {
       </Link>
       <div>
         <Link
-          href="https://github.com/Dax2405"
+          href="https://github.com/daxrpm"
           target="_blank"
           className="flex items-center space-x-2"
         >
