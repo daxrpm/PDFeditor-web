@@ -4,11 +4,13 @@ import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import Link from "next/link";
+import { LucideIcon } from "lucide-react";
 
 interface ThreeDCardDemoProps {
   title: string;
   description: string;
-  image: string;
+  image?: string;
+  icon?: LucideIcon;
   link: string;
 }
 
@@ -16,6 +18,7 @@ export function ThreeDCardDemo({
   title,
   description,
   image,
+  icon: Icon,
   link,
 }: ThreeDCardDemoProps) {
   return (
@@ -35,13 +38,19 @@ export function ThreeDCardDemo({
           {description}
         </CardItem>
         <CardItem translateZ="100" className="w-full mt-4">
-          <Image
-            src={image}
-            height="1587"
-            width="500"
-            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-            alt="thumbnail"
-          />
+          {Icon ? (
+            <div className="h-60 w-full flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 dark:from-blue-600 dark:to-purple-700 group-hover/card:shadow-xl">
+              <Icon className="w-32 h-32 text-white" strokeWidth={1.5} />
+            </div>
+          ) : image ? (
+            <Image
+              src={image}
+              height="1587"
+              width="500"
+              className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+              alt="thumbnail"
+            />
+          ) : null}
         </CardItem>
         <div className="flex justify-between items-center mt-20">
           <CardItem

@@ -1,6 +1,7 @@
-import Navbar from "@/components/Navbar";
+"use client";
+
 import { ThreeDCardDemo } from "@/components/cards";
-import Image from "next/image";
+import { Combine, Archive, Scissors } from "lucide-react";
 
 export default function Home() {
   return (
@@ -9,19 +10,19 @@ export default function Home() {
         <ThreeDCardDemo
           title="Unir PDF"
           description="Unir dos o mas pdfs sin perder calidad"
-          image="https://dax-ec.ru/imgs/UnirPdf.png"
+          icon={Combine}
           link="/unir"
         />
         <ThreeDCardDemo
           title="Comprimir PDF"
           description="Comprimir PDFs sin perder calidad"
-          image="https://dax-ec.ru/imgs/ComprimirPdf.png"
+          icon={Archive}
           link="/comprimir"
         />
         <ThreeDCardDemo
           title="Separar PDF"
           description="separar PDFs sin perder calidad"
-          image="https://dax-ec.ru/imgs/SepararPdf.png"
+          icon={Scissors}
           link="/separar"
         />
       </div>
