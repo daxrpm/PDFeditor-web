@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { FileUpload } from "@/components/ui/file-upload";
 import axios from "axios";
+import { API_ENDPOINTS } from "@/lib/api-config";
 
 export default function FileUploadDemo() {
   const [files, setFiles] = useState<File[]>([]);
@@ -23,7 +24,7 @@ export default function FileUploadDemo() {
 
     try {
       const response = await axios.post(
-        "https://pdf-api.dax-ec.ru/dividir_pdf/",
+        API_ENDPOINTS.SPLIT_PDF,
         formData,
         {
           responseType: "blob",

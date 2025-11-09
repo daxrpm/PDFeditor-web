@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { FileUpload } from "@/components/ui/file-upload-multiple-pdf";
 import axios from "axios";
+import { API_ENDPOINTS } from "@/lib/api-config";
 
 export default function FileUploadDemo() {
   const [files, setFiles] = useState<File[]>([]);
@@ -20,7 +21,7 @@ export default function FileUploadDemo() {
 
     try {
       const response = await axios.post(
-        "https://pdf-api.dax-ec.ru/unir_pdfs/",
+        API_ENDPOINTS.MERGE_PDFS,
         formData,
         {
           responseType: "blob",
