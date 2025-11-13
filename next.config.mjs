@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
   images: {
-    domains: ["images.unsplash.com", "dax-ec.ru"],
+    domains: ["images.unsplash.com"],
   },
 
 };
