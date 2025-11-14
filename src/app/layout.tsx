@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/context/theme-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MatomoAnalytics from "@/components/MatomoAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -127,6 +128,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <MatomoAnalytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
